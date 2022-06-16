@@ -15,4 +15,14 @@
     <PackageReference Include="System.Net.Http.Json" Version="5.0.0" />
   </ItemGroup>
 
+  <ItemGroup>
+    <Folder Include="wwwroot\Новая папка1\" />
+    <Folder Include="wwwroot\Новая папка\" />
+    <Folder Include="Новая папка\" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <None Include="wwwroot\images\1.png" />
+  </ItemGroup>
+
 </Project>

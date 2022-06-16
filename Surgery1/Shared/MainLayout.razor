@@ -2,22 +2,26 @@
 
 <div class="page">
     @*<div class="sidebar">
-        <NavMenu />
-    </div>*@
+            <NavMenu />
+        </div>*@
     <div class="main">
-        <div class="top-row px-4">
-            <a href="Counter" target="_blank">О нас</a>
-            <a href="http://blazor.net" target="_blank">Запись</a>
-            <a href="http://blazor.net" target="_blank">Услуги</a>
-            <a href="http://blazor.net" target="_blank">Отделения</a>
-            <a href="http://blazor.net" target="_blank">Мы в вк<img href="#"</a>
-            <a href="http://blazor.net" target="_blank">Мы в Instagramm</a>
-            <a href="http://blazor.net" target="_blank">Мы в Telegram</a>
-        </div>
+        <div class="container">
+            <header class="d-flex flex-wrap justify-content-center py-3 mb-4 border-bottom">
+                <a href="/" class="d-flex align-items-center mb-3 mb-md-0 me-md-auto text-dark text-decoration-none">
+                    <svg class="bi me-2" width="40" height="32"><use xlink:href="#bootstrap" /></svg>
+                    <span class="fs-4"></span>
+                </a>
 
-            @Body
-             <div class="name">
-        <p class="title">Наша хирургия</p>
+                <ul class="nav nav-pills">
+                    <li class="nav-item"><a href="#" class="nav-link active" aria-current="page">Домой</a></li>
+                    <li class="nav-item"><a href="/about" class="nav-link">О нас</a></li>
+                    <li class="nav-item"><a href="/services" class="nav-link">Услуги</a></li>
+                    <li class="nav-item"><a href="#" class="nav-link">Отделения</a></li>
+                    <li class="nav-item"><a href="#" class="nav-link">Что-то еще</a></li>
+                </ul>
+            </header>
+
         </div>
+        @Body
     </div>
 </div>
