@@ -5,13 +5,29 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <Compile Remove="wwwroot\Новая папка2\**" />
+    <Content Remove="wwwroot\Новая папка2\**" />
+    <EmbeddedResource Remove="wwwroot\Новая папка2\**" />
+    <None Remove="wwwroot\Новая папка2\**" />
+  </ItemGroup>
+
+  <ItemGroup>
     <Content Remove="wwwroot\images\1.png" />
-    <Content Remove="wwwroot\images\2.jpg" />
+    <Content Remove="wwwroot\images\MainLayout.razor" />
+    <Content Remove="wwwroot\images\MainLayout.razor.css" />
   </ItemGroup>
 
   <ItemGroup>
     <PackageReference Include="Microsoft.AspNetCore.Components.WebAssembly" Version="5.0.4" />
     <PackageReference Include="Microsoft.AspNetCore.Components.WebAssembly.DevServer" Version="5.0.4" PrivateAssets="all" />
+    <PackageReference Include="Microsoft.EntityFrameworkCore" Version="5.0.17" />
+    <PackageReference Include="Microsoft.EntityFrameworkCore.Abstractions" Version="5.0.17" />
+    <PackageReference Include="Microsoft.EntityFrameworkCore.Analyzers" Version="5.0.17" />
+    <PackageReference Include="Microsoft.EntityFrameworkCore.Design" Version="5.0.17">
+      <PrivateAssets>all</PrivateAssets>
+      <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
+    </PackageReference>
+    <PackageReference Include="Microsoft.EntityFrameworkCore.Relational" Version="5.0.17" />
     <PackageReference Include="Microsoft.EntityFrameworkCore.SqlServer" Version="5.0.17" />
     <PackageReference Include="Microsoft.EntityFrameworkCore.Tools" Version="5.0.17">
       <PrivateAssets>all</PrivateAssets>
@@ -23,6 +39,7 @@
   <ItemGroup>
     <Folder Include="wwwroot\Новая папка1\" />
     <Folder Include="wwwroot\Новая папка\" />
+    <Folder Include="Model\" />
     <Folder Include="Новая папка\" />
   </ItemGroup>
 
