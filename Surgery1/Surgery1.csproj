@@ -1,4 +1,4 @@
-<Project Sdk="Microsoft.NET.Sdk.BlazorWebAssembly">
+<Project Sdk="Microsoft.NET.Sdk.Web">
 
   <PropertyGroup>
     <TargetFramework>net5.0</TargetFramework>
@@ -18,8 +18,6 @@
   </ItemGroup>
 
   <ItemGroup>
-    <PackageReference Include="Microsoft.AspNetCore.Components.WebAssembly" Version="5.0.4" />
-    <PackageReference Include="Microsoft.AspNetCore.Components.WebAssembly.DevServer" Version="5.0.4" PrivateAssets="all" />
     <PackageReference Include="Microsoft.EntityFrameworkCore" Version="5.0.17" />
     <PackageReference Include="Microsoft.EntityFrameworkCore.Abstractions" Version="5.0.17" />
     <PackageReference Include="Microsoft.EntityFrameworkCore.Analyzers" Version="5.0.17" />
@@ -39,7 +37,6 @@
   <ItemGroup>
     <Folder Include="wwwroot\Новая папка1\" />
     <Folder Include="wwwroot\Новая папка\" />
-    <Folder Include="Model\" />
     <Folder Include="Новая папка\" />
   </ItemGroup>
 
