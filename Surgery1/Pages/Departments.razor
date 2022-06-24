@@ -1,6 +1,36 @@
 ﻿@page "/departments"
-<div class="row">
-    <div class="col-3">
-        <h1><p>Наши адреса</p></h1>
-    </div>
-</div>
+@using Model
+@using Microsoft.EntityFrameworkCore
+@inject PracticeContext DB
+
+<h3>Отделения</h3>
+
+<table class="table">
+    <thead>
+        <tr>
+            <th scope="col">Id</th>
+            <th scope="col">Название</th>
+            <th scope="col">Глава</th>
+            <th scope="col">Адрес</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var Department in Departmentes)
+        {
+            <tr>
+
+                <th scope="row">@Department.Id</th>
+                <td>@Department.Name</td>
+                <td>@Department.HeadOfDepartment</td>
+                <td>@Department.Adress</td>
+            </tr>
+        }
+    </tbody>
+</table>
+@code {
+    List<Department> Departmentes = new();
+    protected override async Task OnInitializedAsync()
+    {
+        Departmentes = DB.Departments.ToList();
+    }
+}

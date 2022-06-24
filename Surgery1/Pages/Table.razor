@@ -1,4 +1,8 @@
 ﻿@page "/personal"
+@using Model
+@using Microsoft.EntityFrameworkCore
+@inject PracticeContext DB
+
 <h3>Персонал</h3>
 
 <table class="table">
@@ -12,19 +16,23 @@
         </tr>
     </thead>
     <tbody>
+       @foreach (var Personal in Personals)
+        {
         <tr>
-            <th scope="row">1</th>
-            <td>Роман</td>
-            <td>Другов </td>
-            <td>хирургия глаза</td>
-            <td>4420 513863</td>
+            
+            <th scope="row">@Personal.Id</th>
+            <td>@Personal.FirstName</td>
+            <td>@Personal.Lastname</td>
+            <td>@Personal.Qualification</td>
+            <td>@Personal.PassportData</td>
         </tr>
-        <tr>
-            <th scope="row">2</th>
-            <td>Нина</td>
-            <td>Павловна</td>
-            <td>сердечно - сосудистая хирургия</td>
-            <td>4050 389709</td>
-        </tr>
+        }
     </tbody>
 </table>
+@code {
+    List<Personal> Personals = new();
+    protected override async Task OnInitializedAsync()
+    {
+        Personals = DB.Personals.ToList();
+    }
+}
