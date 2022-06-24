@@ -1,42 +1,32 @@
 ﻿@page "/services"
+@using Model
+@inject PracticeContext DB
+    <div class="container">
+        <div class="row">
+            @foreach (var services in Service)
+            {
+                <div class="col-3">
 
-<div class="" style="width: 18rem;">
-    <img src="..." class="card-img-top" alt="...">
-    <div class="card-body">
-        <h5 class="card-title">Название карточки</h5>
-        <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-        <a href="#" class="btn btn-primary">Переход куда-нибудь</a>
-    </div>
-</div>
-<div class="card" style="width: 18rem;">
-    <img src="..." class="card-img-top" alt="...">
-    <div class="card-body">
-        <h5 class="card-title">Название карточки</h5>
-        <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-        <a href="#" class="btn btn-primary">Переход куда-нибудь</a>
-    </div>
-</div>
-<div class="card" style="width: 18rem;">
-    <img src="..." class="card-img-top" alt="...">
-    <div class="card-body">
-        <h5 class="card-title">Название карточки</h5>
-        <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-        <a href="#" class="btn btn-primary">Переход куда-нибудь</a>
-    </div>
-</div>
-<div class="card" style="width: 18rem;">
-    <img src="..." class="card-img-top" alt="...">
-    <div class="card-body">
-        <h5 class="card-title">Название карточки</h5>
-        <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-        <a href="#" class="btn btn-primary">Переход куда-нибудь</a>
-    </div>
-</div>
-<div class="card" style="width: 18rem;">
-    <img src="..." class="card-img-top" alt="...">
-    <div class="card-body">
-        <h5 class="card-title">Название карточки</h5>
-        <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-        <a href="#" class="btn btn-primary">Переход куда-нибудь</a>
-    </div>
-</div>
+                    <div class="card shadow-sm">
+                        <img class="bd-placeholder-img card-img-top" src=@($"images/Service{services.Id}.jpg") style="width:300px;height:300px" role="img" preserveAspectRatio="xMidYMid slice" focusable="false"><title>Placeholder</title><rect width="100%" height="100%" fill="#55595c" /><text x="50%" y="50%" fill="#eceeef" dy=".3em"></text>
+                        <div class="card-body">
+                            <p class="card-text">@services.Name</p>
+                            <div class="d-flex justify-content-between align-items-center">
+                                <div class="btn-group">
+                                    <a href=@($"/Tovar/{services.Id}") class="btn btn-primary">Подробнее</a>
+                                </div>
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+            }
+            </div>
+        </div>
+@code {
+    List<Service> Service = new();
+    protected override async Task OnInitializedAsync()
+    {
+        Service = DB.Services.ToList();
+    }
+}

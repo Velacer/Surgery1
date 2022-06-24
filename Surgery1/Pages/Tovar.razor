@@ -1,0 +1,26 @@
+﻿@page "/Tovar/{id:int}"
+@using Model
+@inject PracticeContext DB
+<center>
+    <div class="card" style="width: 600px;">
+        <img src=@($"images/Service{CurrentService.Id}.jpg") class="card-img-top" alt="абоба">
+        <div class="card-body" style="display: inline-block;">
+            <h5 class="card-title">@CurrentService.Name</h5>
+            <p class="card-text">
+                Описание:@CurrentService.Description
+            </p>
+            <h6>Цена:@CurrentService.Price</h6>
+            <a href="#" class="btn btn-primary">Записаться</a>
+        </div>
+    </div>
+</center>
+
+@code {
+    [Parameter]
+    public int Id { get; set; }
+    public Model.Service CurrentService = new();
+    protected override async Task OnInitializedAsync()
+    {
+        CurrentService = DB.Services.FirstOrDefault(c => c.Id == Id);
+    }
+}
